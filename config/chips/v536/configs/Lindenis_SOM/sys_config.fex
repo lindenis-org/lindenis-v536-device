@@ -5,7 +5,7 @@
 
 [product]
 version = "100"
-machine = "lindenis_v536_SBC"
+machine = "lindenis_v536_SOM"
 
 [platform]
 eraseflag   = 0
@@ -17,11 +17,9 @@ boot_led = port:PH15<1><default><default><0>
 
 [target]
 boot_clock   	= 912
-storage_type    = 2
+storage_type    = 3
 power_mode   = 0
-burn_key    = 0
-lind_test = 0
-lind_test_root = "/dev/mmcblk1p7"
+burn_key     = 0
 
 [gpio_bias]
 ;pc_bias		= "axp233:bldo1:1800"
@@ -42,7 +40,6 @@ dcdc4_vol                  = 1001360
 ;dldo2_vol                  = 900
 ;aldo1_vol                  = 1001800
 aldo2_vol                  = 1800
-;aldo3_vol                  = 1003300
 aldo3_vol                  = 1001800
 bldo1_vol                  = 1001800
 bldo2_vol                  = 2800
@@ -96,12 +93,10 @@ twi_sda         = port:PH15<2><default><default><default>
 
 [uart_para]
 uart_used       = 1
-uart_debug_port = 4
+uart_debug_port = 0
 uart_type       = 2
-;uart_debug_tx   = port:PH07<3><1><default><default>
-;uart_debug_rx   = port:PH08<3><1><default><default>
-uart_debug_tx   = port:PH00<5><1><default><default>
-uart_debug_rx   = port:PH01<5><1><default><default>
+uart_debug_tx   = port:PH07<3><1><2><default>
+uart_debug_rx   = port:PH08<3><1><2><default>
 
 [jtag_para]
 jtag_enable     = 0
@@ -265,7 +260,7 @@ uart0_regulator = "vcc-io"
 ;SPI controller configuration
 ;----------------------------------------------------------------------------------
 [spi0]
-spi0_used       = 0
+spi0_used       = 1
 spi0_cs_number  = 2
 spi0_cs_bitmap  = 3
 spi0_cs0        = port:PC01<4><1><default><default>
@@ -461,9 +456,8 @@ screen0_output_range     = 2
 screen0_output_scan      = 0
 screen0_output_aspect_ratio = 8
 
-screen1_output_type      = 0
-screen1_output_mode      = 0
-
+screen1_output_type      = 1
+screen1_output_mode      = 4
 screen1_output_format    = 1
 screen1_output_bits      = 0
 screen1_output_eotf      = 4

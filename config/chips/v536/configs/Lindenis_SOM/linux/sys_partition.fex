@@ -35,7 +35,7 @@ size = 16384
 
 
 [partition]
-    name         = boot-resource
+    name         = boot-res
     size         = 2048
     downloadfile = "boot-resource.fex"
     user_type    = 0x8000
@@ -54,33 +54,23 @@ size = 16384
 
 [partition]
     name         = rootfs
-    size         = 1048576
+    size         = 131072
     downloadfile = "rootfs.fex"
     user_type    = 0x8000
 
 [partition]
-    name         = recovery
-    size         = 1048576
-    downloadfile = "recovery.fex"
+    name         = overlay
+    size         = 1024
+    downloadfile = "overlay.fex"
+    user_type    = 0x8000
+
+[partition]
+    name         = private
+    size         = 1024
     user_type    = 0x8000
 
 ;[partition]
-;    name         = extend
-;    size         = 1048576
-;    ;downloadfile = "boot.fex"
-;    user_type    = 0x8000
-
-[partition]
-   name         = rootfs_data
-   size         = 2048
-   user_type    = 0x8000
-
-[partition]
-   name         = misc
-   size         = 2048
-   user_type    = 0x8000
-
-[partition]
-   name         = private
-   size         = 2048
-   user_type    = 0x8000
+;   name         = bootlogo
+;   size         = 512
+;   downloadfile = "bootlogo.fex"
+;   user_type    = 0x8000

@@ -10,7 +10,7 @@
 ;    mbr的大小, 以Kbyte为单位
 ;****************************************************
 [mbr]
-size = 16384
+size = 16
 
 ;********************************************************************************************************
 ;                                              分区配置
@@ -35,52 +35,38 @@ size = 16384
 
 
 [partition]
-    name         = boot-resource
-    size         = 2048
-    downloadfile = "boot-resource.fex"
-    user_type    = 0x8000
-
-[partition]
-   name         = env
-   size         = 2048
-   downloadfile = "env.fex"
-   user_type    = 0x8000
-
-[partition]
     name         = boot
-    size         = 32768
+    size         = 8192
     downloadfile = "boot.fex"
     user_type    = 0x8000
 
 [partition]
     name         = rootfs
-    size         = 1048576
+    size         = 20480
     downloadfile = "rootfs.fex"
     user_type    = 0x8000
 
 [partition]
-    name         = recovery
-    size         = 1048576
-    downloadfile = "recovery.fex"
+    name         = overlay
+    size         = 1024
+    downloadfile = "overlay.fex"
     user_type    = 0x8000
 
-;[partition]
-;    name         = extend
-;    size         = 1048576
-;    ;downloadfile = "boot.fex"
-;    user_type    = 0x8000
-
 [partition]
-   name         = rootfs_data
-   size         = 2048
-   user_type    = 0x8000
-
-[partition]
-   name         = misc
-   size         = 2048
+   name         = env
+   size         = 256
+   downloadfile = "env_nor.fex"
    user_type    = 0x8000
 
 [partition]
    name         = private
-   size         = 2048
+   size         = 128
+;   downloadfile = ""
+   user_type    = 0x8000
+   keydata	= 1
+
+[partition]
+   name         = bootlogo
+   size         = 512
+   downloadfile = "bootlogo.fex"
    user_type    = 0x8000
